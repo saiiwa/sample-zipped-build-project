@@ -20,8 +20,8 @@ jobs:
       - name: Creating release folder
         run: |
           zip -r public.zip dist
-          mkdir -p dist/release
-          mv public.zip dist/release/latest.zip
-          echo $GITHUB_SHA > dist/release/latest.txt
+          mkdir -p public/release
+          mv public.zip public/release/latest.zip
+          echo $GITHUB_SHA > public/release/latest.txt
       - name: Deploy Project Artifacts to Vercel
         run: vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
