@@ -1,0 +1,9 @@
+{
+  "git": {
+    "deploymentEnabled": {
+      "main": false
+    }
+  },
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm build"
+}
