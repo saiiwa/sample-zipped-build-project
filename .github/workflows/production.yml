@@ -25,7 +25,5 @@ jobs:
           mv public.zip dist/release/latest.zip
       - name: Create text file containing commit SHA
         run: echo $GITHUB_SHA > dist/release/latest.txt
-      - name: Zip build folder
-        run: zip -r public.zip dist
       - name: Deploy Project Artifacts to Vercel
-        run: vercel deploy public.zip --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel deploy dist --prod --token=${{ secrets.VERCEL_TOKEN }}
