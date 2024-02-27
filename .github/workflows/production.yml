@@ -20,7 +20,7 @@ jobs:
       - name: Creating release folder
         run: |
           cd dist
-          zip -r public.zip .
+          zip -r ../public.zip .
           cd ..
           mkdir -p public/release
           mv public.zip public/release/latest.zip
