@@ -20,7 +20,9 @@ jobs:
       - name: Zip build folder
         run: zip -r public.zip dist
       - name: Move zipped build to build folder
-        run: mv public.zip dist/release/latest.zip
+        run: |
+          mkdir -p dist/release
+          mv public.zip dist/release/latest.zip
       - name: Create text file containing commit SHA
         run: echo $GITHUB_SHA > dist/release/latest.txt
       - name: Zip build folder
