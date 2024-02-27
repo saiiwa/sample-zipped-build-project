@@ -19,7 +19,9 @@ jobs:
           pnpm build
       - name: Creating release folder
         run: |
-          zip -r public.zip dist/*
+          cd dist
+          zip -r public.zip .
+          cd ..
           mkdir -p public/release
           mv public.zip public/release/latest.zip
           echo $GITHUB_SHA > public/release/latest.txt
